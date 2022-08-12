@@ -1,4 +1,13 @@
-import { Avatar, Blockquote, Container, Group, List, Space, Text, Title } from "@mantine/core";
+import {
+  Avatar,
+  Blockquote,
+  Container,
+  Group,
+  List,
+  Space,
+  Text,
+  Title,
+} from "@mantine/core";
 import "./css/MainText.css";
 
 function MainText() {
@@ -20,22 +29,87 @@ function MainText() {
       </Blockquote>
       <section className="row" />
       <section className="right">
-        <Title pb="sm" order={2} style={{color: "white"}}>The Site Stack</Title>
+        <Title pb="sm" order={2} style={{ color: "white" }}>
+          The Site Stack
+        </Title>
         <List size="xl" color="white">
-            <List.Item icon={<Avatar size="md" radius="xl"src="https://reactjs.org/logo-og.png" />}><a href="https://reactjs.org/">ReactJS</a></List.Item>
-            <List.Item icon={<Avatar size="md" radius="xl"src="https://avatars.githubusercontent.com/u/79146003?s=280&v=4" />}><a href="https://mantine.dev/">Mantine</a></List.Item>
-            <List.Item icon={<Avatar size="md" radius="xl"src="https://pbs.twimg.com/profile_images/1510259524271173638/lgTEVmRi_400x400.jpg" />}><a href="https://threejs.org/">ThreeJS</a></List.Item>
-            <List.Item icon={<Avatar size="md" radius="xl"src="https://github.com/jwagner/simplex-noise.js/raw/main/doc/github-header-fs8.png" />}><a href="https://www.npmjs.com/package/simplex-noise">Simplex Noise</a></List.Item>
-            <List.Item icon={<Avatar size="md" radius="xl"src="/logo.png" />}><a href="https://get.webgl.org/">Shaders (GLSL & WebGL)</a></List.Item>
+          <List.Item
+            icon={
+              <Avatar
+                size="md"
+                radius="xl"
+                src="https://reactjs.org/logo-og.png"
+              />
+            }
+          >
+            <a href="https://reactjs.org/">ReactJS</a>
+          </List.Item>
+          <List.Item
+            icon={
+              <Avatar
+                size="md"
+                radius="xl"
+                src="https://avatars.githubusercontent.com/u/79146003?s=280&v=4"
+              />
+            }
+          >
+            <a href="https://mantine.dev/">Mantine</a>
+          </List.Item>
+          <List.Item
+            icon={
+              <Avatar
+                size="md"
+                radius="xl"
+                src="https://pbs.twimg.com/profile_images/1510259524271173638/lgTEVmRi_400x400.jpg"
+              />
+            }
+          >
+            <a href="https://threejs.org/">ThreeJS</a>
+          </List.Item>
+          <List.Item
+            icon={
+              <Avatar
+                size="md"
+                radius="xl"
+                src="https://github.com/jwagner/simplex-noise.js/raw/main/doc/github-header-fs8.png"
+              />
+            }
+          >
+            <a href="https://www.npmjs.com/package/simplex-noise">
+              Simplex Noise
+            </a>
+          </List.Item>
+          <List.Item icon={<Avatar size="md" radius="xl" src="/logo.png" />}>
+            <a href="https://get.webgl.org/">Shaders (GLSL & WebGL)</a>
+          </List.Item>
         </List>
       </section>
       <section className="left">
-      <Title order={2} style={{color: "white"}}>The Planet</Title>
-      <Text size="xs" pb="sm" color="white">in the background</Text>
-      <Text color="white">The planet carelessly spinning in the background is based off <a href="https://www.youtube.com/playlist?list=PLFt_AvWsXl0cONs3T0By4puYy6GM22ko8">Sebastian Lague's Planet series in Unity</a>.</Text>
-      <Text color="white">However, I wanted it in the background using ThreeJS which is very different to Unity's rendering System. So for practical purposes, that planet is using the ideas from Sebastian but the code has mostly be rewritten and can be found on <a href="https://github.com/FidgetyMouse18/personal-website/tree/master/src/Assets/Planet">GitHub</a>.</Text>
+        <Title order={2} style={{ color: "white" }}>
+          The Planet
+        </Title>
+        <Text size="xs" pb="sm" color="white">
+          in the background
+        </Text>
+        <Text color="white">
+          The planet carelessly spinning in the background is based off{" "}
+          <a href="https://www.youtube.com/playlist?list=PLFt_AvWsXl0cONs3T0By4puYy6GM22ko8">
+            Sebastian Lague's Planet series in Unity
+          </a>
+          . It is procedurally generated and hence will change slightly every
+          time you refresh the page.
+        </Text>
+        <Text color="white">
+          Though it's based on Sebastian's code I wanted it in the background
+          using ThreeJS which is very different to Unity's rendering System. So
+          for practical purposes, that planet is using the ideas from Sebastian
+          but the code has mostly be rewritten and can be found on{" "}
+          <a href="https://github.com/FidgetyMouse18/personal-website/tree/master/src/Assets/Planet">
+            GitHub
+          </a>
+          .
+        </Text>
       </section>
-
     </Container>
   );
 }
