@@ -113,7 +113,7 @@ function MainText() {
         </Text>
       </section>
 
-      <section className="right" />
+      <section className="row" />
       <section className="right">
         <Title order={2} style={{ color: "white" }}>
           My Expertise
@@ -199,7 +199,7 @@ function MainText() {
             <Title pb="xs" order={4} style={{ color: "white" }}>
               Frameworks
             </Title>
-            <List style={{ color: "white" }}>
+            <List size="lg" style={{ color: "white" }}>
               <List.Item
                 icon={
                   <Avatar
