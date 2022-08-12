@@ -33,7 +33,7 @@ function MainText() {
       <Title order={2} style={{color: "white"}}>The Planet</Title>
       <Text size="xs" pb="sm" color="white">in the background</Text>
       <Text color="white">The planet carelessly spinning in the background is based off <a href="https://www.youtube.com/playlist?list=PLFt_AvWsXl0cONs3T0By4puYy6GM22ko8">Sebastian Lague's Planet series in Unity</a>.</Text>
-      <Text color="white">However, I wanted it in the background using ThreeJS which is very different to Unity's rendering System. So for practical purposes, that planet is using the ideas from Sebastian but the code has mostly be rewritten and can be found on <a>GitHub</a>.</Text>
+      <Text color="white">However, I wanted it in the background using ThreeJS which is very different to Unity's rendering System. So for practical purposes, that planet is using the ideas from Sebastian but the code has mostly be rewritten and can be found on <a href="https://github.com/FidgetyMouse18/personal-website/tree/master/src/Assets/Planet">GitHub</a>.</Text>
       </section>
 
     </Container>
