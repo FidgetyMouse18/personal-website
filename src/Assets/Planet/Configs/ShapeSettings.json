@@ -1,0 +1,32 @@
+{
+    "planetRadius": 8,
+    "noiseLayers": [
+        {
+            "useFirstAsMask": false,
+            "noiseSettings": {
+                "type": "simple",
+                "strength": 0.12,
+                "baseRoughness": 1.46,
+                "roughness": 2.78,
+                "octaves": 4,
+                "persistance": 0.55,
+                "minValue": 1.07,
+                "centre": {"x": -1.44, "y": 7.01, "z": 2.45}
+            }
+        },
+        {
+            "useFirstAsMask": true,
+            "noiseSettings": {
+                "type": "rigid",
+                "strength": 1.7,
+                "baseRoughness": 0.81,
+                "roughness": 4.53,
+                "octaves": 1,
+                "persistance": 0.5,
+                "minValue": 0.01,
+                "centre": {"x": 1.69, "y": 0, "z": 0},
+                "weightMultiplier": 0.78
+            }
+        }
+    ]
+}

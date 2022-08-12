@@ -1,24 +1,22 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
-
+import { AppShell, Footer, Header, Text, Image } from "@mantine/core";
+import React from "react";
+import "./css/App.css";
+import FancyBackground from "./FancyBackground";
+import MainText from "./MainText";
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <AppShell header={
+        <Header height={70} p="md" style={{position: "absolute", zIndex: 100}}>
+          <div style={{ display: "inline-flex", alignItems: 'center', height: '100%' }}>
+
+            <Image src="/logo.png" height={70} fit="contain" />
+          </div>
+        </Header>
+      }>
+        <MainText/>
+      <FancyBackground/>
+      </AppShell>
     </div>
   );
 }

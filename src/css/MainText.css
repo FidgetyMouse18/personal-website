@@ -1,0 +1,45 @@
+.main {
+    position: absolute;
+    min-width: 100vw;
+    z-index: 99;
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+  }
+
+section.right {
+    grid-column: 8 / 11;
+    margin-top: 25;
+    margin-bottom: 25;
+    line-height: 1.5;
+}
+section.left {
+    grid-column: 2 / 6;
+    margin-top: 25;
+    margin-bottom: 25;
+    line-height: 1.5;
+}
+
+section.row {
+    grid-column: 1 / 12;
+    min-height: 1;
+}
+
+blockquote {
+    grid-column: 1 / span 5;
+}
+
+.intro {
+    background: rgba(15, 15, 15, 0.95);
+    grid-column: 1 / span 3;
+}
+
+a {
+    color: #EEEEFF;
+    text-decoration: none;
+}
+
+a:hover {
+    color:#00A0C6; 
+    text-decoration:none; 
+    cursor:pointer;  
+}
