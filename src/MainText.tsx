@@ -4,6 +4,7 @@ import {
   Container,
   Group,
   List,
+  SimpleGrid,
   Space,
   Text,
   Title,
@@ -23,7 +24,7 @@ function MainText() {
           Welcome to my Portfolio Site.
         </Text>
       </Container>
-      <Blockquote cite="Me" p="xl" color="blue">
+      <Blockquote cite="Me" p="xl" color="blue" style={{ color: "white" }}>
         I'd like to thank StackOverflow, YouTube, W3Schools and GeeksforGeeks.
         Pretty sure I learnt 90% of my coding skills and knowledge from them.
       </Blockquote>
@@ -84,6 +85,7 @@ function MainText() {
           </List.Item>
         </List>
       </section>
+
       <section className="left">
         <Title order={2} style={{ color: "white" }}>
           The Planet
@@ -109,6 +111,167 @@ function MainText() {
           </a>
           .
         </Text>
+      </section>
+
+      <section className="right" />
+      <section className="right">
+        <Title order={2} style={{ color: "white" }}>
+          My Expertise
+        </Title>
+        <Text size="xs" pb="sm" color="white">
+          or at least a brief overview of them
+        </Text>
+        <SimpleGrid cols={2}>
+          <div>
+            <Title pb="xs" order={4} style={{ color: "white" }}>
+              Languages
+            </Title>
+            <List size="lg" style={{ color: "white" }}>
+              <List.Item
+                icon={
+                  <Avatar
+                    size="sm"
+                    radius="xl"
+                    src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/4c/Typescript_logo_2020.svg/1200px-Typescript_logo_2020.svg.png"
+                  />
+                }
+              >
+                TypeScript
+              </List.Item>
+              <List.Item
+                icon={
+                  <Avatar
+                    size="sm"
+                    radius="xl"
+                    src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/99/Unofficial_JavaScript_logo_2.svg/480px-Unofficial_JavaScript_logo_2.svg.png"
+                  />
+                }
+              >
+                JavaScript
+              </List.Item>
+              <List.Item
+                icon={
+                  <Avatar
+                    size="sm"
+                    radius="xl"
+                    src="https://miro.medium.com/max/1200/1*i2skbfmDsHayHhqPfwt6pA.png"
+                  />
+                }
+              >
+                Golang
+              </List.Item>
+              <List.Item
+                icon={
+                  <Avatar
+                    size="sm"
+                    radius="xl"
+                    src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c3/Python-logo-notext.svg/1200px-Python-logo-notext.svg.png"
+                  />
+                }
+              >
+                Python
+              </List.Item>
+              <List.Item
+                icon={
+                  <Avatar
+                    size="sm"
+                    radius="xl"
+                    src="https://www.avenga.com/wp-content/uploads/2020/11/C-Sharp.png"
+                  />
+                }
+              >
+                C#
+              </List.Item>
+              <List.Item
+                icon={
+                  <Avatar
+                    size="sm"
+                    radius="xl"
+                    src="https://nakedsecurity.sophos.com/wp-content/uploads/sites/2/2022/04/java-1200.png?w=780&h=408&crop=1"
+                  />
+                }
+              >
+                Java
+              </List.Item>
+            </List>
+          </div>
+          <div>
+            <Title pb="xs" order={4} style={{ color: "white" }}>
+              Frameworks
+            </Title>
+            <List style={{ color: "white" }}>
+              <List.Item
+                icon={
+                  <Avatar
+                    size="sm"
+                    radius="xl"
+                    src="https://reactjs.org/logo-og.png"
+                  />
+                }
+              >
+                ReactJS
+              </List.Item>
+              <List.Item
+                icon={
+                  <Avatar
+                    size="sm"
+                    radius="xl"
+                    src="https://www.rlogical.com/wp-content/uploads/2021/08/Rlogical-Blog-Images-thumbnail.png"
+                  />
+                }
+              >
+                NextJS
+              </List.Item>
+              <List.Item
+                icon={
+                  <Avatar
+                    size="sm"
+                    radius="xl"
+                    src="https://github.com/wailsapp/wails/raw/master/logo-universal.png"
+                  />
+                }
+              >
+                WailsIO
+              </List.Item>
+              <List.Item
+                icon={
+                  <Avatar
+                    size="sm"
+                    radius="xl"
+                    src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/91/Electron_Software_Framework_Logo.svg/1200px-Electron_Software_Framework_Logo.svg.png"
+                  />
+                }
+              >
+                Electron
+              </List.Item>
+              <List.Item
+                icon={
+                  <Avatar
+                    size="sm"
+                    radius="xl"
+                    src="https://images.g2crowd.com/uploads/product/image/large_detail/large_detail_3de44ba8b1638979671c64379167d0b8/unity.jpeg"
+                  />
+                }
+              >
+                Unity
+              </List.Item>
+              <List.Item
+                icon={
+                  <Avatar
+                    size="sm"
+                    radius="xl"
+                    src="https://www.gstatic.com/devrel-devsite/prod/v03524b055229ae2d7e36c2f7867401f3447503fd5c5c18fd5cdefd483b35c9b4/firebase/images/touchicon-180.png"
+                  />
+                }
+              >
+                Firebase
+              </List.Item>
+            </List>
+          </div>
+        </SimpleGrid>
+      </section>
+      <section className="left">
+        <Space h="xl" />
       </section>
     </Container>
   );
