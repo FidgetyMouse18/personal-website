@@ -19,10 +19,10 @@ class Planet {
     this.Initialize();
   }
 
-  RotateOnAxis() {
-    this.mesh.rotateOnAxis(new Vector3(0.55,1,0.03), 0.0008);
-    //this.mesh.rotateY(0.001);
+  RotateOnAxis(axis: Vector3, speed: number) {
+    this.mesh.rotateOnAxis(axis, speed);
   }
+
   SetPos(x: number, y: number, z: number) {
     this.mesh.position.set(x,y,z);
   }

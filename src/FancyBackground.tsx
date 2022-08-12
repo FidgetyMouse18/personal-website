@@ -6,6 +6,7 @@ import {
   WebGLRenderer,
   PointLight,
   AmbientLight,
+  Vector3,
 } from "three";
 import { OrbitControls } from "three/examples/jsm/controls/OrbitControls";
 import torus from "./Assets/Torus";
@@ -24,7 +25,6 @@ class FancyBackground extends Component<props, state> {
   renderer: WebGLRenderer | null;
   controls: OrbitControls | null;
   planet: Planet | null;
-
   constructor(props: any) {
     super(props);
     this.state = {
@@ -43,6 +43,7 @@ class FancyBackground extends Component<props, state> {
     this.camera.position.setZ(30);
 
     this.animate = this.animate.bind(this);
+    this.moveCamera = this.moveCamera.bind(this);
   }
 
   addGeometries(): void {
@@ -85,7 +86,7 @@ class FancyBackground extends Component<props, state> {
     torus.rotateX(0.003);
     torus.rotateY(0.0015);
     torus.rotateZ(0.003);
-    this.planet?.RotateOnAxis();
+    this.planet?.RotateOnAxis(new Vector3(0.55,1,0.03), 0.0008);
 
     if (!this.renderer) return;
     this.renderer.render(this.scene, this.camera);
@@ -94,11 +95,12 @@ class FancyBackground extends Component<props, state> {
   }
 
   moveCamera() {
-    const t = document.body.getBoundingClientRect().top
+      const t = document.body.getBoundingClientRect().top
+      this.planet?.RotateOnAxis(new Vector3(0.55,1,0.03), t * -0.00008);
+      //this.camera.position.z += t * -0.01;
+      //this.camera.position.x += t * 0.005;
+      //this.camera.position.y += t * -0.002;
 
-    this.camera.position.z = t * -0.01;
-    this.camera.position.x = t * -0.0002;
-    this.camera.position.y = t * -0.0002;
   }
 
   render(): ReactNode {
