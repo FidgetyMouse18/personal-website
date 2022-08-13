@@ -2,20 +2,11 @@ import { Vector3 } from "three";
 import BaseNoise from "./Base";
 import { createNoise3D, NoiseFunction3D } from "simplex-noise";
 import alea from "alea";
+import { noiseSettingsSimple} from "../Types/NoiseSettings"
 
-interface noiseSettings {
-  type: string;
-  strength: number;
-  baseRoughness: number;
-  roughness: number;
-  octaves: number;
-  persistance: number;
-  minValue: number;
-  centre: { x: number; y: number; z: number };
-}
 
 class SimpleNoise extends BaseNoise {
-  settings: noiseSettings = {
+  settings: noiseSettingsSimple = {
     type: "simple",
     strength: 1,
     baseRoughness: 1,
@@ -27,7 +18,7 @@ class SimpleNoise extends BaseNoise {
   };
   noise: NoiseFunction3D = createNoise3D(alea(Date.now()));
 
-  SetSettings(settings: noiseSettings) {
+  SetSettings(settings: noiseSettingsSimple) {
     this.settings = settings;
   }
 

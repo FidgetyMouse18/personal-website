@@ -4,7 +4,7 @@
         {
             "useFirstAsMask": false,
             "noiseSettings": {
-                "type": "simple",
+                "type": "Simple",
                 "strength": 0.12,
                 "baseRoughness": 1.46,
                 "roughness": 2.78,
@@ -17,7 +17,7 @@
         {
             "useFirstAsMask": true,
             "noiseSettings": {
-                "type": "rigid",
+                "type": "Rigid",
                 "strength": 1.7,
                 "baseRoughness": 0.81,
                 "roughness": 4.53,

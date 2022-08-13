@@ -9,9 +9,11 @@ import {
   Vector3,
 } from "three";
 import { OrbitControls } from "three/examples/jsm/controls/OrbitControls";
-import torus from "./Assets/Torus";
 import { createRandStar } from "./Assets/Star";
 import Planet from "./Assets/Planet";
+import {ShapeSettings} from "./Assets/Planet/Types/ShapeSettings"
+
+const shapeSettings: ShapeSettings = require("./Assets/Planet/Configs/ShapeSettings.json");
 
 interface props {}
 
@@ -62,7 +64,7 @@ class FancyBackground extends Component<props, state> {
 
 
     if(this.planet != null) return;
-    this.planet = new Planet(this.scene);
+    this.planet = new Planet(this.scene, shapeSettings, 128);
     this.planet.SetPos(-10, 10, -30)
   }
 
@@ -83,9 +85,6 @@ class FancyBackground extends Component<props, state> {
   animate(): void {
     requestAnimationFrame(this.animate);
 
-    torus.rotateX(0.003);
-    torus.rotateY(0.0015);
-    torus.rotateZ(0.003);
     this.planet?.RotateOnAxis(new Vector3(0.55,1,0.03), 0.0008);
 
     if (!this.renderer) return;

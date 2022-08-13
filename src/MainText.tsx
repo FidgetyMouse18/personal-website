@@ -2,7 +2,6 @@ import {
   Avatar,
   Blockquote,
   Container,
-  Group,
   List,
   SimpleGrid,
   Space,

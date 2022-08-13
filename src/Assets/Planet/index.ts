@@ -8,14 +8,21 @@ import {
 } from "three";
 import ShapeGenerator from "./ShapeGenerator";
 import { _FS, _VS } from "./Shaders/Planet";
+import {ShapeSettings} from "./Types/ShapeSettings"
+import NoiseFactory from "./NoiseFactory";
+
 class Planet {
   scene: Scene;
   shapeGenerator: ShapeGenerator;
   mesh: Mesh;
-  constructor(scene: Scene) {
+  resolution: number;
+
+  constructor(scene: Scene, shapeSettings: ShapeSettings, resolution: number) {
     this.scene = scene;
-    this.shapeGenerator = new ShapeGenerator();
+    this.shapeGenerator = new ShapeGenerator(shapeSettings);
     this.mesh = new Mesh();
+    this.resolution = resolution;
+
     this.Initialize();
   }
 
@@ -30,11 +37,24 @@ class Planet {
     return this.mesh.position;
   }
 
+  ChangeSettings(shapeSettings: ShapeSettings) {
+    this.shapeGenerator = new ShapeGenerator(shapeSettings);
+    console.log("Settings changed")
+  }
+
+  ResetNoise() {
+    NoiseFactory.ResetNoise();
+  }
+
+  ChangeResolution(resolution: number) {
+    this.resolution = resolution;
+  }
+
   Initialize() {
+    console.log("Building Planet")
     var sphereVerticesArray = [];
     var sphereNormsArray = [];
-    let resolution = 128;
-    let sphere = new SphereGeometry(1, resolution, resolution);
+    let sphere = new SphereGeometry(1, this.resolution, this.resolution);
     let sphereVerts = sphere.getAttribute("position").array;
     for (var i = 0; i < sphereVerts.length / 3; i++) {
       var vec = new Vector3(
@@ -71,6 +91,7 @@ class Planet {
     });
 
     const mesh = new Mesh(sphere, shader);
+    this.scene.clear();
     this.scene.add(mesh);
     this.mesh = mesh;
   }

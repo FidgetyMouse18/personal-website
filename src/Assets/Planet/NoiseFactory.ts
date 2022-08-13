@@ -1,34 +1,17 @@
 import { SimpleNoise, RigidNoise, BaseNoise, EmptyNoise } from "./NoiseFilters";
-
-interface noiseSettingsRidgid {
-  type: string;
-  strength: number;
-  baseRoughness: number;
-  roughness: number;
-  octaves: number;
-  persistance: number;
-  minValue: number;
-  centre: { x: number; y: number; z: number };
-  weightMultiplier: number;
-}
-
-interface noiseSettingsSimple {
-  type: string;
-  strength: number;
-  baseRoughness: number;
-  roughness: number;
-  octaves: number;
-  persistance: number;
-  minValue: number;
-  centre: { x: number; y: number; z: number };
-}
+import {
+  noiseSettingsRidgid,
+  noiseSettingsSimple,
+} from "./Types/NoiseSettings";
 
 class NoiseFactory {
   static simpleNoise: SimpleNoise = new SimpleNoise();
   static rigidNoise: RigidNoise = new RigidNoise();
   static emptyNoise: EmptyNoise = new EmptyNoise();
 
-  static GetNoiseFilter(settings: noiseSettingsSimple | noiseSettingsRidgid): BaseNoise {
+  static GetNoiseFilter(
+    settings: noiseSettingsSimple | noiseSettingsRidgid
+  ): BaseNoise {
     switch (settings.type.toLowerCase()) {
       case "simple":
         this.simpleNoise.SetSettings(settings);
@@ -41,5 +24,11 @@ class NoiseFactory {
         return this.emptyNoise;
     }
   }
+
+  static ResetNoise() {
+    this.rigidNoise = new RigidNoise();
+    this.simpleNoise = new SimpleNoise();
+  }
 }
+
 export default NoiseFactory;
