@@ -89,6 +89,7 @@ class PlanetSim extends Component<props, state> {
   }
 
   remakePlanet() {
+    this.scene.clear();
     this.planet?.ChangeSettings(this.state.shapeSettings);
     this.planet?.Initialize();
   }
@@ -336,6 +337,7 @@ class PlanetSim extends Component<props, state> {
                   if (!e) return;
 
                   this.setState({ resolution: e }, () => {
+                    this.scene.clear();
                     this.planet?.ChangeResolution(this.state.resolution);
                     this.planet?.Initialize();
                   });

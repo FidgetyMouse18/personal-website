@@ -37,6 +37,10 @@ class Planet {
     return this.mesh.position;
   }
 
+  GetPlanetName(): string {
+    return this.mesh.name;
+  }
+
   ChangeSettings(shapeSettings: ShapeSettings) {
     this.shapeGenerator = new ShapeGenerator(shapeSettings);
     console.log("Settings changed")
@@ -91,7 +95,6 @@ class Planet {
     });
 
     const mesh = new Mesh(sphere, shader);
-    this.scene.clear();
     this.scene.add(mesh);
     this.mesh = mesh;
   }
