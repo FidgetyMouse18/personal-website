@@ -4,12 +4,12 @@ import React from "react";
 import "./css/App.css";
 import FancyBackground from "./FancyBackground";
 import MainText from "./MainText";
-import PlanetSim from "./PlanetSim"
+import PlanetSim from "./PlanetSim";
 function App() {
   const bigDevice = useMediaQuery("(min-width: 900px)");
   let app;
   if (bigDevice) {
-    switch(window.location.pathname) {
+    switch (window.location.pathname) {
       case "/":
         app = (
           <div>
@@ -19,10 +19,10 @@ function App() {
         );
         break;
       case "/planet-sim":
-        app = <PlanetSim />
-        break
+        app = <PlanetSim />;
+        break;
       default:
-        window.location.pathname = "/"
+        window.location.pathname = "/";
         app = (
           <div>
             <MainText />
@@ -31,9 +31,8 @@ function App() {
         );
         break;
     }
-    
   } else {
-    app = "This device is not currently supported";
+    app = <FancyBackground />;
   }
   return (
     <div>
@@ -54,15 +53,18 @@ function App() {
               <a href="/">
                 <Image src="/logo.png" height={70} fit="contain" />
               </a>
-              <div
+              {bigDevice ? <div
                 style={{
                   right: "0%",
                   position: "absolute",
                   marginRight: "25px",
                 }}
               >
-                <Text color="white" component="a" href="/planet-sim">Planet Sim</Text>
-              </div>
+                <Text color="white" component="a" href="/planet-sim">
+                  Planet Sim
+                </Text>
+              </div> : null }
+              
             </div>
           </Header>
         }

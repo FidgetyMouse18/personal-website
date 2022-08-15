@@ -101,7 +101,7 @@ class PlanetSim extends Component<props, state> {
           <Title p="sm" order={4} style={{ color: "white" }}>
             Noise Layer {i + 1}
           </Title>
-          <Group position="center" grow pl="sm">
+          {i === 0 ? null : <Group position="center" grow pl="sm">
             <Text pb="sm" color="white">
               First Layer as Mask
             </Text>
@@ -118,15 +118,14 @@ class PlanetSim extends Component<props, state> {
                 });
               }}
             />
-          </Group>
-
-          <Group position="center" grow pl="sm">
+          </Group>}
+          {i === 0 ? null : <Group position="center" grow pl="sm">
             <Text pb="sm" color="white">
               Noise Type
             </Text>
             <NativeSelect
               pb="sm"
-              data={["Simple", "Rigid"]}
+              data={["Simple", "Rigid"] }
               value={noiseLayer.noiseSettings.type}
               onChange={(e) => {
                 if (!e) return;
@@ -139,7 +138,8 @@ class PlanetSim extends Component<props, state> {
                   });
               }}
             />
-          </Group>
+          </Group>}
+          
           <Group position="center" grow pl="sm">
             <Text pb="sm" color="white">
               Strength

@@ -5,6 +5,8 @@ import App from './App';
 import { initializeApp } from "firebase/app";
 import { getAnalytics } from "firebase/analytics";
 import { MantineProvider } from '@mantine/core';
+import {Helmet} from "react-helmet";
+import Adsense from "./Adsense"
 import {firebaseConfig} from "./Firebase" //Make sure to provide your own one
 
 const app = initializeApp(firebaseConfig);
@@ -22,6 +24,9 @@ root.render(
         colorScheme: "dark",
       }}
       withGlobalStyles>
+        <Helmet>
+          {Adsense}
+        </Helmet>
     <App />
     </MantineProvider>
   </React.StrictMode>
