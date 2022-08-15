@@ -1,4 +1,4 @@
-import { AppShell, Footer, Header, Text, Image } from "@mantine/core";
+import { AppShell, Footer, Header, Text, Image, Group } from "@mantine/core";
 import { useMediaQuery } from "@mantine/hooks";
 import React from "react";
 import "./css/App.css";
@@ -60,9 +60,13 @@ function App() {
                   marginRight: "25px",
                 }}
               >
+                <Group>
                 <Text color="white" component="a" href="/planet-sim">
                   Planet Sim
                 </Text>
+                <Text color="white" component="a" href="http://blog.joshuapinti.com/">Blog</Text>
+                </Group>
+                
               </div> : null }
               
             </div>
