@@ -6,8 +6,10 @@ import { initializeApp } from "firebase/app";
 import { getAnalytics } from "firebase/analytics";
 import { MantineProvider } from '@mantine/core';
 import {Helmet} from "react-helmet";
+
+//Your own keys must be used to replicate
 import Adsense from "./Adsense"
-import {firebaseConfig} from "./Firebase" //Make sure to provide your own one
+import {firebaseConfig} from "./Firebase"
 
 const app = initializeApp(firebaseConfig);
 getAnalytics(app);
