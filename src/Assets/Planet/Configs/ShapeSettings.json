@@ -1,5 +1,13 @@
 {
     "planetRadius": 8,
+    "colors": {
+        "water": {"r": 33, "g": 94, "b": 229},
+        "sand": {"r": 202, "g": 221, "b": 99},
+        "grass": {"r": 30, "g": 229, "b": 29},
+        "lowMt": {"r": 124, "g": 137, "b": 122},
+        "midMt": {"r": 70, "g": 72, "b": 69},
+        "upperMt": {"r": 255, "g": 255, "b": 255}
+    },
     "noiseLayers": [
         {
             "useFirstAsMask": false,
