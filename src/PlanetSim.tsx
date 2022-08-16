@@ -89,6 +89,11 @@ class PlanetSim extends Component<props, state> {
     this.controls.update();
   }
 
+  updateColor() {
+    this.planet?.ChangeSettings(this.state.shapeSettings);
+    this.planet?.UpdateColors();
+  }
+
   remakePlanet() {
     this.scene.clear();
     this.planet?.ChangeSettings(this.state.shapeSettings);
@@ -350,7 +355,7 @@ class PlanetSim extends Component<props, state> {
                 if (match !== null) {
                   let temp = this.state.shapeSettings;
                   temp.colors.water = {r: parseInt(match[1]),g: parseInt(match[2]), b: parseInt(match[3])}
-                  this.setState({shapeSettings: temp}, () => {this.remakePlanet();})
+                  this.setState({shapeSettings: temp}, () => {this.updateColor();})
                 }
               }}
               disallowInput
@@ -365,7 +370,7 @@ class PlanetSim extends Component<props, state> {
                 if (match !== null) {
                   let temp = this.state.shapeSettings;
                   temp.colors.sand = {r: parseInt(match[1]),g: parseInt(match[2]), b: parseInt(match[3])}
-                  this.setState({shapeSettings: temp}, () => {this.remakePlanet();})
+                  this.setState({shapeSettings: temp}, () => {this.updateColor();})
                 }
               }}
               disallowInput
@@ -380,7 +385,7 @@ class PlanetSim extends Component<props, state> {
                 if (match !== null) {
                   let temp = this.state.shapeSettings;
                   temp.colors.grass = {r: parseInt(match[1]),g: parseInt(match[2]), b: parseInt(match[3])}
-                  this.setState({shapeSettings: temp}, () => {this.remakePlanet();})
+                  this.setState({shapeSettings: temp}, () => {this.updateColor();})
                 }
               }}
               disallowInput
@@ -395,7 +400,7 @@ class PlanetSim extends Component<props, state> {
                 if (match !== null) {
                   let temp = this.state.shapeSettings;
                   temp.colors.lowMt = {r: parseInt(match[1]),g: parseInt(match[2]), b: parseInt(match[3])}
-                  this.setState({shapeSettings: temp}, () => {this.remakePlanet();})
+                  this.setState({shapeSettings: temp}, () => {this.updateColor();})
                 }
               }}
               disallowInput
@@ -410,7 +415,7 @@ class PlanetSim extends Component<props, state> {
                 if (match !== null) {
                   let temp = this.state.shapeSettings;
                   temp.colors.midMt = {r: parseInt(match[1]),g: parseInt(match[2]), b: parseInt(match[3])}
-                  this.setState({shapeSettings: temp}, () => {this.remakePlanet();})
+                  this.setState({shapeSettings: temp}, () => {this.updateColor();})
                 }
               }}
               disallowInput
@@ -425,13 +430,12 @@ class PlanetSim extends Component<props, state> {
                 if (match !== null) {
                   let temp = this.state.shapeSettings;
                   temp.colors.upperMt = {r: parseInt(match[1]),g: parseInt(match[2]), b: parseInt(match[3])}
-                  this.setState({shapeSettings: temp}, () => {this.remakePlanet();})
+                  this.setState({shapeSettings: temp}, () => {this.updateColor();})
                 }
               }}
               disallowInput
               format="rgb"
             />
-
             {controls}
           </Paper>
         </Container>

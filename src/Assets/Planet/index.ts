@@ -14,7 +14,7 @@ import NoiseFactory from "./NoiseFactory";
 class Planet {
   scene: Scene;
   shapeGenerator: ShapeGenerator;
-  mesh: Mesh;
+  mesh: Mesh<SphereGeometry, ShaderMaterial>;
   resolution: number;
   shapeSettings: ShapeSettings;
 
@@ -46,6 +46,15 @@ class Planet {
   ChangeSettings(shapeSettings: ShapeSettings) {
     this.shapeGenerator = new ShapeGenerator(shapeSettings);
     console.log("Settings changed")
+  }
+
+  UpdateColors() {
+    this.mesh.material.uniforms.water.value = new Vector3(this.shapeSettings.colors.water.r / 255.0, this.shapeSettings.colors.water.g / 255.0, this.shapeSettings.colors.water.b / 255.0);
+    this.mesh.material.uniforms.sand.value = new Vector3(this.shapeSettings.colors.sand.r / 255.0, this.shapeSettings.colors.sand.g / 255.0, this.shapeSettings.colors.sand.b / 255.0);
+    this.mesh.material.uniforms.grass.value = new Vector3(this.shapeSettings.colors.grass.r / 255.0, this.shapeSettings.colors.grass.g / 255.0, this.shapeSettings.colors.grass.b / 255.0);
+    this.mesh.material.uniforms.lowMt.value = new Vector3(this.shapeSettings.colors.lowMt.r / 255.0, this.shapeSettings.colors.lowMt.g / 255.0, this.shapeSettings.colors.lowMt.b / 255.0);
+    this.mesh.material.uniforms.midMt.value = new Vector3(this.shapeSettings.colors.midMt.r / 255.0, this.shapeSettings.colors.midMt.g / 255.0, this.shapeSettings.colors.midMt.b / 255.0);
+    this.mesh.material.uniforms.upperMt.value = new Vector3(this.shapeSettings.colors.upperMt.r / 255.0, this.shapeSettings.colors.upperMt.g / 255.0, this.shapeSettings.colors.upperMt.b / 255.0);
   }
 
   ResetNoise() {
