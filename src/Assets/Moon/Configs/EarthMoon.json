@@ -1,0 +1,40 @@
+{
+    "planetRadius": 2,
+    "colors": {
+        "water": {"r": 140, "g": 140, "b": 140},
+        "sand": {"r": 97, "g": 97, "b": 97},
+        "grass": {"r": 163, "g": 163, "b": 163},
+        "lowMt": {"r": 115, "g": 115, "b": 115},
+        "midMt": {"r": 66, "g": 66, "b": 66},
+        "upperMt": {"r": 196, "g": 196, "b": 196}
+    },
+    "noiseLayers": [
+        {
+            "useFirstAsMask": false,
+            "noiseSettings": {
+                "type": "Simple",
+                "strength": 0.1,
+                "baseRoughness": 1.46,
+                "roughness": 2.78,
+                "octaves": 3,
+                "persistance": 0.55,
+                "minValue": 0.92,
+                "centre": {"x": -1.44, "y": 7.01, "z": 2.45}
+            }
+        },
+        {
+            "useFirstAsMask": true,
+            "noiseSettings": {
+                "type": "Rigid",
+                "strength": 1.2,
+                "baseRoughness": 0.81,
+                "roughness": 4.53,
+                "octaves": 1,
+                "persistance": 0.5,
+                "minValue": 0.01,
+                "centre": {"x": 1.69, "y": 0, "z": 0},
+                "weightMultiplier": 0.78
+            }
+        }
+    ]
+}

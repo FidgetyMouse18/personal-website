@@ -12,8 +12,11 @@ import { OrbitControls } from "three/examples/jsm/controls/OrbitControls";
 import { createRandStar } from "./Assets/Star";
 import Planet from "./Assets/Planet";
 import {ShapeSettings} from "./Assets/Planet/Types/ShapeSettings"
+import Moon from "./Assets/Moon";
+import { randFloat, randInt } from "three/src/math/MathUtils";
 
 const shapeSettings: ShapeSettings = require("./Assets/Planet/Configs/ShapeSettings.json");
+const EarthMoon: ShapeSettings = require("./Assets/Moon/Configs/EarthMoon.json");
 
 interface props {}
 
@@ -27,6 +30,8 @@ class FancyBackground extends Component<props, state> {
   renderer: WebGLRenderer | null;
   controls: OrbitControls | null;
   planet: Planet | null;
+  moon: Moon | null;
+  orbitalAxis: number;
   constructor(props: any) {
     super(props);
     this.state = {
@@ -42,8 +47,9 @@ class FancyBackground extends Component<props, state> {
     this.renderer = null;
     this.controls = null;
     this.planet = null;
+    this.moon = null;
     this.camera.position.setZ(30);
-
+      this.orbitalAxis = randFloat(-1 * Math.PI, Math.PI)
     this.animate = this.animate.bind(this);
     this.moveCamera = this.moveCamera.bind(this);
   }
@@ -66,6 +72,7 @@ class FancyBackground extends Component<props, state> {
     if(this.planet != null) return;
     this.planet = new Planet(this.scene, shapeSettings, 128);
     this.planet.SetPos(-10, 10, -30)
+    this.moon = new Moon(this.scene, EarthMoon, 64, this.planet);
   }
 
   componentDidMount(): void {
@@ -86,7 +93,8 @@ class FancyBackground extends Component<props, state> {
     requestAnimationFrame(this.animate);
 
     this.planet?.RotateOnAxis(new Vector3(0.55,1,0.03), 0.0008);
-
+    this.moon?.RotateOnAxis(new Vector3(0.55,1,0.03), 0.0008);
+    this.moon?.OrbitAroundAxis(0.0002, 20, this.orbitalAxis);
     if (!this.renderer) return;
     this.renderer.render(this.scene, this.camera);
     if (!this.controls) return;
