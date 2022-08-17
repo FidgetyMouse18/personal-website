@@ -39,7 +39,7 @@ class FancyBackground extends Component<props, state> {
     };
     this.scene = new Scene();
     this.camera = new PerspectiveCamera(
-      75,
+      45,
       window.innerWidth / window.innerHeight,
       0.1,
       1000
@@ -71,7 +71,7 @@ class FancyBackground extends Component<props, state> {
 
     if(this.planet != null) return;
     this.planet = new Planet(this.scene, shapeSettings, 128);
-    this.planet.SetPos(-10, 10, -30)
+    this.planet.SetPos(-10, 10, -70)
     this.moon = new Moon(this.scene, EarthMoon, 64, this.planet);
   }
 
@@ -104,10 +104,6 @@ class FancyBackground extends Component<props, state> {
   moveCamera() {
       const t = document.body.getBoundingClientRect().top
       this.planet?.RotateOnAxis(new Vector3(0.55,1,0.03), t * -0.00008);
-      //this.camera.position.z += t * -0.01;
-      //this.camera.position.x += t * 0.005;
-      //this.camera.position.y += t * -0.002;
-
   }
 
   render(): ReactNode {
